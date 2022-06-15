@@ -1,11 +1,35 @@
 package com.example.backgrounderaser.utils
 
+import android.Manifest
+import android.graphics.Bitmap
+import android.os.Build
 import com.example.backgrounderaser.R
 
 object Constant {
 
-    const val REQUEST_CAPTURE_IMAGE = 10101
-    const val REQUEST_GELLERY_IMAGE = 20202
+    const val CAMERA_IMAGE = 10101
+    const val PICK_IMAGE = 20202
+
+    val readPermission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        arrayOf(
+            Manifest.permission.ACCESS_MEDIA_LOCATION,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        )
+    } else {
+        arrayOf(
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        )
+    }
+
+    val cameraPermission = arrayOf(Manifest.permission.CAMERA)
+
+    var screenWidth: Float = 720f
+
+    @JvmStatic
+    var mainBitmap: Bitmap? = null
+
+    var cameraStatus: Boolean = false
 
     @JvmStatic
     val fileProvider: String = "com.example.backgrounderaser.fileprovider"

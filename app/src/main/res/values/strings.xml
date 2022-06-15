@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Background Eraser</string>
     <string name="directory">SerpSkillTemp</string>
+    <string name="temp_image">temp_image.jpg</string>
+    <string name="temp_images_dir">temp_images</string>
+    <string name="authorities">com.example.backgrounderaser.fileprovider</string>
+    <string name="images">image</string>
 </resources>
