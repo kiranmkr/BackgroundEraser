@@ -1,4 +1,4 @@
-package com.example.backgrounderaser
+package com.example.backgrounderaser.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,5 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
+
+        mainBinding.imagCap.setOnClickListener {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-package com.example.backgrounderaser
+package com.example.backgrounderaser.ui
+
 
 import android.content.Intent
 import android.os.Bundle

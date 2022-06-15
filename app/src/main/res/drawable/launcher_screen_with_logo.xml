@@ -3,7 +3,7 @@
     android:opacity="opaque">
 
     <!--Background color of your Splash Screen-->
-    <item android:drawable="@android:color/white" />
+    <item android:drawable="@drawable/splash_bg" />
 
     <item>
 

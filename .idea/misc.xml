@@ -3,8 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/btn_one.xml" value="0.2195" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/btn_two.xml" value="0.2195" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ic_homeicon.xml" value="0.2195" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ic_round_camera_alt.xml" value="0.2195" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ic_round_image_24.xml" value="0.2195" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/launcher_screen_with_logo.xml" value="0.112" />
-        <entry key="..\:/BackgroundEraser/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/main_bg.xml" value="0.2195" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ripple.xml" value="0.2195" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/splash_bg.xml" value="0.2185" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/font/poppins_semibold.xml" value="0.246875" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/layout/activity_main.xml" value="0.536" />
       </map>
     </option>
   </component>
