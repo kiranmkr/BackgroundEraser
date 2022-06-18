@@ -3,10 +3,7 @@ package com.example.backgrounderaser.utils
 import android.app.Activity
 import android.content.Context
 import android.content.res.AssetManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.Matrix
+import android.graphics.*
 import android.media.ExifInterface
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
@@ -14,6 +11,8 @@ import android.os.Build
 import android.os.Environment
 import android.util.Log
 import android.util.TypedValue
+import android.view.MotionEvent
+import android.view.View
 import android.widget.Toast
 import java.io.File
 import java.io.FileInputStream
@@ -73,6 +72,118 @@ object Utils {
             e.printStackTrace()
         }
     }
+
+    var d = 0f
+    var newRot = 0f
+    private var isZoomAndRotate = false
+    private var isOutSide = false
+    private val NONE = 0
+    private val DRAG = 1
+    private val ZOOM = 2
+    private var mode = NONE
+    private val start = PointF()
+    private val mid = PointF()
+    var oldDist = 1f
+    private var xCoOrdinate = 0f
+    private var yCoOrdinate = 0f
+    var lastEvent: FloatArray? = null
+
+    @JvmStatic
+    fun viewTransformation(view: View, event: MotionEvent) {
+        when (event.action and MotionEvent.ACTION_MASK) {
+            MotionEvent.ACTION_DOWN -> {
+
+
+                xCoOrdinate = view.x - event.rawX
+                yCoOrdinate = view.y - event.rawY
+                start.set(event.x, event.y)
+                isOutSide = false
+                mode = DRAG
+                lastEvent = null
+
+            }
+            MotionEvent.ACTION_POINTER_DOWN -> {
+                oldDist = spacing(event)
+                if (oldDist > 10f) {
+                    midPoint(mid, event)
+                    mode = ZOOM
+                }
+                lastEvent = FloatArray(4)
+                lastEvent!![0] = event.getX(0)
+                lastEvent!![1] = event.getX(1)
+                lastEvent!![2] = event.getY(0)
+                lastEvent!![3] = event.getY(1)
+                d = rotation(event)
+            }
+            MotionEvent.ACTION_UP -> {
+
+                isZoomAndRotate = false
+                if (mode == DRAG) {
+                    event.x
+                    event.y
+                }
+                isOutSide = true
+                mode = NONE
+                lastEvent = null
+                mode = NONE
+                lastEvent = null
+            }
+            MotionEvent.ACTION_OUTSIDE -> {
+                isOutSide = true
+                mode = NONE
+                lastEvent = null
+                mode = NONE
+                lastEvent = null
+            }
+            MotionEvent.ACTION_POINTER_UP -> {
+                mode = NONE
+                lastEvent = null
+            }
+            MotionEvent.ACTION_MOVE -> if (!isOutSide) {
+                if (mode == DRAG) {
+                    isZoomAndRotate = false
+                    view.animate().x(event.rawX + xCoOrdinate).y(event.rawY + yCoOrdinate)
+                        .setDuration(0).start()
+                }
+                if (mode == ZOOM && event.pointerCount == 2) {
+                    val newDist1 = spacing(event)
+                    if (newDist1 > 10f) {
+                        val scale: Float = newDist1 / oldDist * view.scaleX
+                        if (scale in 0.5..2.5) {
+                            view.scaleX = scale
+                            view.scaleY = scale
+                            Log.d("mySticker", "${scale}")
+                        }
+                    }
+                    if (lastEvent != null) {
+                        newRot = rotation(event)
+                        view.rotation = (view.rotation + (newRot - d))
+                    }
+                }
+            }
+
+        }
+    }
+
+    private fun spacing(event: MotionEvent): Float {
+        val x = event.getX(0) - event.getX(1)
+        val y = event.getY(0) - event.getY(1)
+        return Math.sqrt((x * x + y * y).toDouble()).toFloat()
+    }
+
+    private fun midPoint(point: PointF, event: MotionEvent) {
+        val x = event.getX(0) + event.getX(1)
+        val y = event.getY(0) + event.getY(1)
+        point[x / 2] = y / 2
+    }
+
+    private fun rotation(event: MotionEvent): Float {
+        val delta_x = (event.getX(0) - event.getX(1)).toDouble()
+        val delta_y = (event.getY(0) - event.getY(1)).toDouble()
+        val radians = Math.atan2(delta_y, delta_x)
+        return Math.toDegrees(radians).toFloat()
+    }
+
 
     /**
      * Decode a bitmap from a file and apply the transformations described in its EXIF data

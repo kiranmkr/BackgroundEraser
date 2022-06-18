@@ -3,11 +3,13 @@ package com.example.backgrounderaser.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.palette.graphics.Palette;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -17,18 +19,25 @@ import com.example.backgrounderaser.R;
 import com.example.backgrounderaser.asyncWorking.MLCropAsyncTask;
 import com.example.backgrounderaser.utils.Constant;
 import com.example.backgrounderaser.utils.ImageUtils;
+import com.example.backgrounderaser.utils.Utils;
 
 public class SecondScreen extends AppCompatActivity {
 
     private Bitmap selectedBit;
     private ImageView setimg;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_screen);
 
         setimg = findViewById(R.id.setimg);
+
+        setimg.setOnTouchListener((view, motionEvent) -> {
+            Utils.viewTransformation(view, motionEvent);
+            return true;
+        });
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> setimg.post(() -> {
             if (Constant.getMainBitmap() != null) {
@@ -84,4 +93,6 @@ public class SecondScreen extends AppCompatActivity {
             });
         }, this, progressBar).execute();
     }
+
+
 }
