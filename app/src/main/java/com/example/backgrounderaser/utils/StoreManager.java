@@ -5,8 +5,11 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.util.Log;
+
 import com.example.backgrounderaser.R;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -103,5 +106,22 @@ public class StoreManager {
             deleteFile(activity, BITMAP_ORIGINAL_FILE_NAME);
         }
         saveFile(activity, bitmap, BITMAP_ORIGINAL_FILE_NAME);
+    }
+
+
+    public static final File externalStorageDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+
+    public static String storagePath = null;
+
+    public static String getPath() {
+
+        storagePath = externalStorageDirectory.getAbsolutePath() + "/Background Eraser";
+        File file = new File(storagePath);
+
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+
+        return storagePath;
     }
 }

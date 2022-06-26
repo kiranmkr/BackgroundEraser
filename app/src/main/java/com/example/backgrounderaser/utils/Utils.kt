@@ -14,6 +14,7 @@ import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.drawToBitmap
 import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
@@ -61,6 +62,7 @@ object Utils {
     }
 
 
+    @JvmStatic
     fun showToast(c: Context, message: String?) {
         try {
             if (!(c as Activity).isFinishing) {
@@ -71,6 +73,11 @@ object Utils {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+    @JvmStatic
+    fun getLayoutBitmap(view: View): Bitmap {
+        return view.drawToBitmap(Bitmap.Config.ARGB_8888)
     }
 
     var d = 0f
