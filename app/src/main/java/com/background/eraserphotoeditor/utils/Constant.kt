@@ -32,7 +32,7 @@ object Constant {
     var cameraStatus: Boolean = false
 
     @JvmStatic
-    val fileProvider: String = "com.example.backgrounderaser.fileprovider"
+    val fileProvider: String = "com.background.eraser.photo.editor.fileprovider"
 
     var oldWidth: Int = 0
 

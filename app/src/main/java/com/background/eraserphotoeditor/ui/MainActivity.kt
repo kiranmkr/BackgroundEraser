@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         return if (Build.VERSION.SDK_INT >= 24) {
             FileProvider.getUriForFile(
                 applicationContext,
-                getString(R.string.authorities),
+                Constant.fileProvider,
                 tempImage
             )
         } else {
