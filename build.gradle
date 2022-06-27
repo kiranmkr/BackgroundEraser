@@ -10,6 +10,7 @@ buildscript {
         maven {url 'https://storage.googleapis.com/r8-releases/raw'}
     }
     dependencies {
+        //noinspection AndroidGradlePluginVersion
         classpath 'com.android.tools.build:gradle:7.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
@@ -29,6 +30,7 @@ allprojects {
         maven { url "https://maven.google.com" }
         maven { url "https://storage.googleapis.com/r8-releases/raw" }
     }
+
 }
 
 task clean(type: Delete) {

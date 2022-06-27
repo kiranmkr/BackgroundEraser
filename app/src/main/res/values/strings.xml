@@ -3,7 +3,7 @@
     <string name="directory">SerpSkillTemp</string>
     <string name="temp_image">temp_image.jpg</string>
     <string name="temp_images_dir">temp_images</string>
-    <string name="authorities">com.example.backgrounderaser.fileprovider</string>
+    <string name="authorities">com.Background.eraser.photo.editor.fileprovider</string>
     <string name="images">image</string>
     <string name="upload_image">Upload Image</string>
     <string name="from_camera">From Camera</string>

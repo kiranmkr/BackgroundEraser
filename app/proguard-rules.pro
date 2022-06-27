@@ -52,7 +52,7 @@
 }
 -keep class kotlin.Metadata { *; }
 -keep class kotlin.reflect.** { *; }
--keep class com.example.backgrounderaser.datamodel.** { *; }
+-keep class com.com.Background.eraser.photo.editor.datamodel.** { *; }
 -keepclasseswithmembers class * {
     public <init>(android.content.Context, android.util.AttributeSet, int);
 }
@@ -183,7 +183,7 @@
 -keep class org.wysaid.nativePort.** { *; }
 -keep class org.webrtc.** { *; }
 
--keep class com.example.backgrounderaser.dataModel.** { *; }
+-keep class com.com.Background.eraser.photo.editor.dataModel.** { *; }
 
 # rename the source files to something meaningless, but it must be retained
 
@@ -263,7 +263,6 @@
  <init>(...);
 }
 
--keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
   **[] $VALUES;
   public *;
