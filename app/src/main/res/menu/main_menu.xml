@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/nav_rate_us"
+        android:icon="@drawable/ic_rateus"
+        android:title="@string/rate_us" />
+    <item
+        android:id="@+id/nav_contact_us"
+        android:icon="@drawable/support"
+        android:title="@string/contact_us" />
+    <item
+        android:id="@+id/nav_share_app"
+        android:icon="@drawable/ic_share"
+        android:title="@string/share_app" />
+    <item
+        android:id="@+id/nav_privacy"
+        android:icon="@drawable/privacypolicy"
+        android:title="@string/privacy_policy" />
+
+    <item
+        android:id="@+id/nav_more_app"
+        android:icon="@drawable/moreaap"
+        android:title="@string/our_more_apps" />
+
+</menu>

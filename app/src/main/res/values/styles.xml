@@ -9,7 +9,7 @@
         <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
     </style>
 
-    <style name="AppTheme.Launcher" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme.Launcher" parent="Theme.MaterialComponents.NoActionBar">
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="android:windowBackground">@drawable/launcher_screen_with_logo</item>
         <item name="colorPrimary">@color/colorAccent</item>
@@ -34,7 +34,7 @@
         <item name="android:colorControlActivated">@color/colorPrimary</item>
     </style>
 
-    <style name="full_screen_dialog" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="full_screen_dialog" parent="Theme.AppCompat.NoActionBar">
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="colorPrimary">@color/colorPrimary</item>

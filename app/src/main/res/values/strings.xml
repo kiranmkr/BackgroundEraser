@@ -10,4 +10,13 @@
     <string name="bg_n_eraser">BG \n Eraser</string>
 
     <string name="something_went_wrong" >Something went wrong! Please try again.</string>
+
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="our_more_apps">Our More Apps</string>
+    <string name="share_app">Share App</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="rate_us">Rate Us</string>
+
+    <string name="choose_one">Choose One</string>
+
 </resources>
