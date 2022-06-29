@@ -1,6 +1,5 @@
 package com.background.eraserphotoeditor.ui
 
-
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -23,9 +22,7 @@ import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 import java.io.File
 
-
 class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
-
 
     private lateinit var mainBinding: ActivityMainBinding
 
