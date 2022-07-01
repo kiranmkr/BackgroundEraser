@@ -96,7 +96,7 @@ object Utils {
                 val imageUri: Uri? =
                     resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
 
-                filePath = "/storage/emulated/0/DCIM/Background Eraser"
+                filePath = "/storage/emulated/0/DCIM/Background Eraser/$filename"
 
                 //Opening an outputStream with the Uri that we got
                 fos = imageUri?.let { resolver.openOutputStream(it) }

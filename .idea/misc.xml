@@ -13,6 +13,7 @@
         <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ic_homeicon.xml" value="0.2195" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ic_rateus.xml" value="0.221" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ic_round_camera_alt.xml" value="0.2195" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ic_round_delete.xml" value="0.221" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ic_round_image_24.xml" value="0.2195" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/ic_share.xml" value="0.221" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/image_placeholder.xml" value="0.2195" />
@@ -26,7 +27,7 @@
         <entry key="..\:/BackgroundEraser/app/src/main/res/drawable/support.xml" value="0.221" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/font/poppins_semibold.xml" value="0.246875" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/layout/activity_main.xml" value="0.4518950437317784" />
-        <entry key="..\:/BackgroundEraser/app/src/main/res/layout/activity_second_screen.xml" value="0.4" />
+        <entry key="..\:/BackgroundEraser/app/src/main/res/layout/activity_second_screen.xml" value="0.5798004987531172" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/layout/layer_item.xml" value="0.536" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/layout/nav_header_main.xml" value="0.2421875" />
         <entry key="..\:/BackgroundEraser/app/src/main/res/menu/main_menu.xml" value="0.2421875" />

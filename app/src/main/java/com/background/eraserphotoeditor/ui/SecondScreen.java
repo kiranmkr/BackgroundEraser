@@ -3,6 +3,7 @@ package com.background.eraserphotoeditor.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -40,10 +41,13 @@ public class SecondScreen extends AppCompatActivity implements StickerClick {
     private RelativeLayout savingRoot;
     private ProgressBar progressBar;
 
+    private Boolean bgRemove = true;
+
     Handler workerHandler = new Handler(Looper.getMainLooper());
     ExecutorService executorService = Executors.newCachedThreadPool();
 
     Long mLastClickTime = 0L;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +66,10 @@ public class SecondScreen extends AppCompatActivity implements StickerClick {
         RecyclerView reBackGround = findViewById(R.id.re_back);
         ImageView btnDownload = findViewById(R.id.imageView4);
         savingRoot = findViewById(R.id.mContentRootView);
+        ImageView reMoveImage = findViewById(R.id.img_remove);
         progressBar = findViewById(R.id.crop_progress_bar);
         progressBar.setVisibility(View.GONE);
+
 
         setimg.setOnTouchListener((view, motionEvent) -> {
             Utils.viewTransformation(view, motionEvent);
@@ -89,7 +95,17 @@ public class SecondScreen extends AppCompatActivity implements StickerClick {
             saveUserData();
         });
 
-        updateBackImage();
+        reMoveImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bgRemove = true;
+                Glide.with(SecondScreen.this)
+                        .load(R.drawable.abc)
+                        .dontAnimate().into(setBackImg);
+            }
+        });
+
+        //updateBackImage();
 
     }
 
@@ -106,7 +122,11 @@ public class SecondScreen extends AppCompatActivity implements StickerClick {
             imageBitmap = null;
         }
 
-        imageBitmap = Utils.getLayoutBitmap(savingRoot);
+        if (bgRemove){
+            imageBitmap = Utils.getLayoutBitmap(setimg);
+        }else {
+            imageBitmap = Utils.getLayoutBitmap(savingRoot);
+        }
 
         if (imageBitmap != null) {
 
@@ -185,6 +205,8 @@ public class SecondScreen extends AppCompatActivity implements StickerClick {
 
     @Override
     public void setOnStickerClickListener(int position, boolean isShapeOrNot) {
+
+        bgRemove = false;
 
         String path = "file:///android_asset/bgScr/" + position + ".webp";
 

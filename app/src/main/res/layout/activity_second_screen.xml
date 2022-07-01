@@ -121,14 +121,25 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/re_back"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_remove"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         tools:listitem="@layout/layer_item" />
+
+    <ImageView
+        android:id="@+id/img_remove"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/images"
+        app:layout_constraintBottom_toBottomOf="@+id/re_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/re_back"
+        app:srcCompat="@drawable/ic_round_delete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
