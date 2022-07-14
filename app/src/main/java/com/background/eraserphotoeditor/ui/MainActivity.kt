@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
                         startActivity(
                             Intent(
                                 Intent.ACTION_VIEW,
-                                Uri.parse("https://coreelgo.blogspot.com/background-eraser-privacy-policy")
+                                Uri.parse("https://coreelgo.blogspot.com/2022/07/background-eraser-privacy-policy.html")
                             )
                         )
                     } catch (e: Exception) {
